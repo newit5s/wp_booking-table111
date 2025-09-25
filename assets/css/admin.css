@@ -1,0 +1,252 @@
+/* Restaurant Booking Manager - Admin Styles */
+
+.status-pending { 
+    color: #856404; 
+    background: #fff3cd; 
+    padding: 4px 8px; 
+    border-radius: 4px; 
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status-confirmed { 
+    color: #155724; 
+    background: #d4edda; 
+    padding: 4px 8px; 
+    border-radius: 4px; 
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status-cancelled { 
+    color: #721c24; 
+    background: #f8d7da; 
+    padding: 4px 8px; 
+    border-radius: 4px; 
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.rbm-stats {
+    margin: 20px 0;
+}
+
+.rbm-stat-boxes {
+    display: flex; 
+    gap: 20px; 
+    flex-wrap: wrap;
+}
+
+.rbm-stat-box {
+    background: #fff; 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+    min-width: 150px;
+    border: 1px solid #e0e0e0;
+}
+
+.rbm-stat-box h3 {
+    margin: 0; 
+    color: #666;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.rbm-stat-box p {
+    font-size: 24px; 
+    font-weight: bold; 
+    margin: 5px 0 0 0; 
+    color: #333;
+}
+
+/* Filter form styles */
+.tablenav .alignleft form {
+    display: flex; 
+    gap: 10px; 
+    align-items: center; 
+    flex-wrap: wrap;
+}
+
+.tablenav .alignleft select,
+.tablenav .alignleft input[type="text"],
+.tablenav .alignleft input[type="date"] {
+    min-width: 120px;
+}
+
+/* Help section styles */
+.rbm-help-section {
+    margin-top: 30px;
+}
+
+.rbm-help-grid {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; 
+    margin-bottom: 30px;
+}
+
+.rbm-help-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 1px solid #e0e0e0;
+}
+
+.rbm-help-item h3 {
+    margin-top: 0;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.rbm-help-item code {
+    background: #f4f4f4;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 12px;
+    color: #d63384;
+}
+
+.rbm-help-item ul,
+.rbm-help-item ol {
+    padding-left: 20px;
+}
+
+.rbm-help-item li {
+    margin-bottom: 5px;
+}
+
+/* Settings form styles */
+.rbm-settings-form .form-table th {
+    width: 200px;
+    padding-left: 0;
+}
+
+.rbm-settings-form .form-table td {
+    padding-left: 0;
+}
+
+/* Button styles */
+.button-small {
+    padding: 2px 8px;
+    font-size: 12px;
+    height: auto;
+    line-height: 1.5;
+}
+
+/* Table improvements */
+.wp-list-table th,
+.wp-list-table td {
+    vertical-align: top;
+}
+
+.wp-list-table .column-actions {
+    text-align: center;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    .rbm-stat-boxes {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .rbm-stat-boxes {
+        flex-direction: column;
+    }
+    
+    .rbm-stat-box {
+        min-width: auto !important;
+        width: 100%;
+    }
+    
+    .rbm-help-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .tablenav .alignleft form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .tablenav .alignleft select,
+    .tablenav .alignleft input {
+        min-width: auto;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    
+    /* Make table more mobile friendly */
+    .wp-list-table {
+        font-size: 12px;
+    }
+    
+    .wp-list-table th,
+    .wp-list-table td {
+        padding: 5px;
+    }
+}
+
+/* Loading states */
+.rbm-loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.rbm-loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Notice improvements */
+.notice {
+    margin: 15px 0;
+}
+
+.notice p {
+    margin: 0.5em 0;
+}
+
+/* Postbox improvements */
+.postbox {
+    margin-bottom: 20px;
+}
+
+.postbox .inside {
+    margin: 0;
+}
+
+/* Custom scrollbar for overflow elements */
+.rbm-help-item div[style*="overflow"]::-webkit-scrollbar {
+    height: 4px;
+}
+
+.rbm-help-item div[style*="overflow"]::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.rbm-help-item div[style*="overflow"]::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 2px;
+}
+
+.rbm-help-item div[style*="overflow"]::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
